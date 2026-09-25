@@ -1,23 +1,60 @@
 aid: aprogenpharmaceuticals
+
 name: Aprogenpharmaceuticals
-description: 'Aprogenpharmaceuticals is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Aprogenpharmaceuticals is a biopharmaceutical company focused on developing innovative bispecific antibody therapeutics and recombinant protein products. The firm operates in research, development, and manufacturing of novel drug candidates, leveraging advanced platforms for antibody engineering and protein fusion technologies. It maintains a pipeline of novel drugs and biosimilars, with a commitment to advancing healthcare solutions.'
+
 url: https://raw.githubusercontent.com/api-evangelist/aprogenpharmaceuticals/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
 - Company
-apis: []
+- Biopharma
+- Antibodies
+- Biotechnology
+- Therapeutics
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/aprogenpharmaceuticals-hosts.yml
+- type: GitHubOrganization
+  url: https://github.com/Aprogen
+- type: DomainSecurity
+  url: security/aprogenpharmaceuticals-domain-security.yml
 - type: Website
-  url: https://equityzen.com/company/aprogenpharmaceuticals
+  url: https://www.aprogen.com
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: "The company website returns a JavaScript shell with no machine-readable documentation."
+  evidence:
+    - url: https://www.aprogen.com
+      status: 200
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: enriched
+  artifacts_added: 5
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
